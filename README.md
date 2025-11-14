@@ -1,13 +1,13 @@
 <div align="center">
 
-# 🚀 VMix FFmpeg AMD AMF Proxy
+# 🚀  FFMPEG Proxy VMix (Enable GPU Acceleration for AMD GPU's)
 
 Transparent libx264 → h264_amf converter for AMD GPU acceleration
 
 [![Version](https://img.shields.io/badge/version-46.2-blue.svg)](#-changelog) [![Status](https://img.shields.io/badge/status-stable-success.svg)](#-changelog)  
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![FFmpeg](https://img.shields.io/badge/FFmpeg-GPL%20v3-red.svg)](https://ffmpeg.org)  
 [![Build](https://img.shields.io/badge/build-Linux%20%2F%20WSL2-orange.svg)](https://ubuntu.com) [![Target](https://img.shields.io/badge/target-Windows%2010%2F11%20x64-blue.svg)](https://www.microsoft.com)  
-[![Donate](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-donate-FFDD00?logo=buy-me-a-coffee&logoColor=black&labelColor=white)](https://buymeacoffee.com/diux369)
+[![Donate](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-donate-FFDD00?logo=buy-me-a-coffee&logoColor=black&labelColor=white)](https://buymeacoffee.com/amazoniaaudiovisual)
 
 [Features](#-features) • [Quick Start](#-quick-start) • [Installation](#-installation) • [Usage](#-usage) • [How it Works](#-how-it-works) • [Troubleshooting](#-troubleshooting) • [Support](#-support)
 
@@ -171,23 +171,21 @@ Previous (internal) milestones:
 
 ---
 
-## 💖 Support
-
-If this project helped you and you want to support future development, consider buying a coffee:  
-👉 https://buymeacoffee.com/diux369
-
-Or click the badge at the top of this page.
+## 🦜🎥 Support
 
 This tool is the culmination of many hours of work, developed as part of the RDI (Research, Development, and Innovation) initiatives at Ponto de Cultura Amazônia Audiovisual (a non-profit entity).
-The organization's mission statement is: To develop the audiovisual sector and creative economy in the Amazon, providing artists and cultural producers with an environment to realize their projects through technical qualification, promotion of their works, and fostering the sector's long-term sustainability.
 
-Explore our audiovisual projects from the Rain Forest (Manaus/Brazil):
+Based in Manaus, at the heart of the Amazon Rainforest, we are a non-profit organization committed to advancing the audiovisual sector and creative economy. We provide artists and cultural producers with an environment to realize their projects by offering technical qualification, promoting their works, and fostering the sector's long-term sustainability.
+
+If this project helped you and you want to support future development, consider buying a coffee:
+
+👉 https://buymeacoffee.com/amazoniaaudiovisual
 
 Official Website: https://www.amazoniaaudiovisual.com.br
 
 YouTube Channel: https://www.youtube.com/@amazoniaaudiovisual9838
 
-Our Latest Production "Grana Preta": https://www.youtube.com/watch?v=JWzKAfYejc8"
+Our Latest Production "Grana Preta": https://www.youtube.com/watch?v=JWzKAfYejc8
 
 ---
 
@@ -204,5 +202,5 @@ Our Latest Production "Grana Preta": https://www.youtube.com/watch?v=JWzKAfYejc8
 - Issues: open a ticket with details and logs.
 - Discussions: propose improvements and vote on roadmap items.
 
-Made for streamers and integrators who want AMD GPU acceleration without changing their existing vMix presets.
+💚 Made for streamers and integrators who want AMD GPU acceleration without changing their existing vMix setups.
 
