@@ -181,12 +181,13 @@ Or click the badge at the top of this page.
 This tool is the culmination of many hours of work, developed as part of the RDI (Research, Development, and Innovation) initiatives at Ponto de Cultura Amazônia Audiovisual (a non-profit entity).
 The organization's mission statement is: To develop the audiovisual sector and creative economy in the Amazon, providing artists and cultural producers with an environment to realize their projects through technical qualification, promotion of their works, and fostering the sector's long-term sustainability.
 
-Explore our audiovisual projects from the Amazon region:
+Explore our audiovisual projects from the Rain Forest (Manaus/Brazil):
 
 Official Website: https://www.amazoniaaudiovisual.com.br
+
 YouTube Channel: https://www.youtube.com/@amazoniaaudiovisual9838
 
-Our Latest Production: Grana Preta https://www.youtube.com/watch?v=JWzKAfYejc8"
+Our Latest Production "Grana Preta": https://www.youtube.com/watch?v=JWzKAfYejc8"
 
 ---
 
