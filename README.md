@@ -51,7 +51,7 @@ FFmpeg AMD AMF Proxy is an intelligent proxy that automatically converts CPU-bas
 - Resulting artifacts will be in output/.
 
 ### Deploy (Windows)
-Copy these files from output/ to the same directory on Windows:
+Copy these files from output/ to %ProgramFiles(x86)%\vMix\streaming directory on Windows:
 - ffmpeg6.exe — proxy (configure vMix to use this)
 - ffmpeg.exe — real FFmpeg with AMF and FDK-AAC
 - ffprobe.exe — analysis utility
@@ -178,6 +178,16 @@ If this project helped you and you want to support future development, consider 
 
 Or click the badge at the top of this page.
 
+This tool is the culmination of many hours of work, developed as part of the RDI (Research, Development, and Innovation) initiatives at Ponto de Cultura Amazônia Audiovisual (a non-profit entity).
+The organization's mission statement is: To develop the audiovisual sector and creative economy in the Amazon, providing artists and cultural producers with an environment to realize their projects through technical qualification, promotion of their works, and fostering the sector's long-term sustainability.
+
+Explore our audiovisual projects from the Amazon region:
+
+Official Website: https://www.amazoniaaudiovisual.com.br
+YouTube Channel: https://www.youtube.com/@amazoniaaudiovisual9838
+
+Our Latest Production: Grana Preta https://www.youtube.com/watch?v=JWzKAfYejc8"
+
 ---
 
 ## 💙 Acknowledgements
@@ -194,6 +204,4 @@ Or click the badge at the top of this page.
 - Discussions: propose improvements and vote on roadmap items.
 
 Made for streamers and integrators who want AMD GPU acceleration without changing their existing vMix presets.
-```
 
-[1](https://buymeacoffee.com/diux369)
