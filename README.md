@@ -70,15 +70,6 @@ vMix external FFmpeg (conceptually):
 - Your profile: H.264 (libx264), veryfast, 6000 kbps
 - Proxy conversion: h264_amf, usage=lowlatency, quality=speed, 6000 kbps
 
-Command-line (Windows):
-- Streaming to Twitch:
-  ffmpeg6.exe -i "video=Camera" -codec:v libx264 -preset fast -b:v 6000k -codec:a aac -b:a 128k -f flv rtmp://live.twitch.tv/app/STREAM_KEY
-- Recording:
-  ffmpeg6.exe -i input.mp4 -codec:v libx264 -crf 23 output.mp4
-
-Runtime log:
-- ffmpeg_proxy.log (created next to ffmpeg6.exe)
-
 ---
 
 ## 🔄 How it Works
@@ -155,19 +146,13 @@ Previous (internal) milestones:
 
 ---
 
-## 🤝 Contributing
+## 🧭 Future implementations
 
-- Open issues and feature requests.
-- Share logs (depure.log, ffmpeg_proxy.log) for bug reports.
-- Pull requests welcome (build steps and proxy improvements).
-
----
-
-## 📄 License
-
-- Build scripts: MIT
-- FFmpeg: GPL v3 / LGPL v2.1
-- AMD AMF SDK: AMD Software License
+- Next: AV1 proxy (av1_amf) targeting RDNA3-class GPUs, optimized for AMD RX 7000+ series; the proxy will transparently map common x264/VP9/SVT-AV1 options to av1_amf for low-latency streaming profiles where possible.  
+- Add preset mappings for AV1 (speed/balanced/quality) with sensible defaults per use case (live → speed/lowlatency, VOD → quality/transcoding).  
+- Validate compatibility and performance across multiple AMF driver versions and RX 7000+ SKUs, and publish tuning guides (bitrate ladders, GOP, lookahead, VBV).  
+- Expand proxy rules to handle mixed workloads (e.g., auto-fallback to H.264 AMF if AV1 AMF is unavailable or unstable on a given driver/hardware combo).  
+- Improve diagnostics: richer ffmpeg_proxy.log with before/after argument snapshots, driver caps dump, and AMF encoder warnings surfaced to users.
 
 ---
 
@@ -189,6 +174,14 @@ Our Latest Production "Grana Preta": https://www.youtube.com/watch?v=JWzKAfYejc8
 
 ---
 
+## 🤝 Contributing
+
+- Open issues and feature requests.
+- Share logs (depure.log, ffmpeg_proxy.log) for bug reports.
+- Pull requests welcome (build steps and proxy improvements).
+
+---
+
 ## 💙 Acknowledgements
 
 - FFmpeg community
@@ -197,10 +190,18 @@ Our Latest Production "Grana Preta": https://www.youtube.com/watch?v=JWzKAfYejc8
 
 ---
 
+## 📄 License
+
+- Build scripts: MIT
+- FFmpeg: GPL v3 / LGPL v2.1
+- AMD AMF SDK: AMD Software License
+
+---
+
 ## 📫 Contact
 
 - Issues: open a ticket with details and logs.
 - Discussions: propose improvements and vote on roadmap items.
 
-💚 Made for streamers and integrators who want AMD GPU acceleration without changing their existing vMix setups.
+💚💛 Made for streamers and integrators who want AMD GPU acceleration without changing their existing vMix setups.
 
