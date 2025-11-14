@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 FFmpeg AMD AMF Proxy
+# 🚀 VMix FFmpeg AMD AMF Proxy
 
 Transparent libx264 → h264_amf converter for AMD GPU acceleration
 
