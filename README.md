@@ -133,7 +133,7 @@ Quality tuning:
 
 ## 📝 Changelog
 
-### v1.0 (46.2) — Stable
+### v1.0 (46.26) — Stable
 - Transparent proxy for libx264 → h264_amf (vMix-friendly).
 - FFmpeg static build with AMF and FDK-AAC integration.
 - Definitive fix for “libfdk_aac not found” via explicit include/lib paths.
