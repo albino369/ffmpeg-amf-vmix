@@ -133,14 +133,15 @@ Quality tuning:
 
 ## 📝 Changelog
 
-### v1.0 (46.26) — Stable
-- Transparent proxy for libx264 → h264_amf (vMix-friendly).
-- FFmpeg static build with AMF and FDK-AAC integration.
-- Definitive fix for “libfdk_aac not found” via explicit include/lib paths.
-- Robust preset mapping and safe removal of incompatible flags.
-- Detailed build and runtime logs for easy debugging.
+### v0.1a (48.0) — Stable
+- No more internal FFmpeg compilation - Users must now provide their own FFmpeg 8.0 build with h264_amf support. The build script has been removed.
+- Minimalist proxy approach - Only handles codec conversion (libx264 → h264_amf) and preset mapping. All other user parameters pass through unchanged.
+- Smart preset mapping - Translates x264 presets to AMF equivalents (e.g., veryfast → -usage lowlatency -quality speed).
+- Fixed FFmpeg path - Proxy always calls FFmpeg from C:\Program Files (x86)\vMix\streaming\ffmpeg.exe for consistent vMix integration.
+- Per-execution logging - Each run creates a timestamped log file showing original command, final command, and execution status for better debugging.
 
 Previous (internal) milestones:
+- v46.26: Detailed build and runtime logs for easy debugging
 - v46.1: Added FDK-AAC artifact/header verification and clearer errors.
 - v46.0: Initial working proxy + AMF pipeline validation.
 
