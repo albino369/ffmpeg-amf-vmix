@@ -4,7 +4,7 @@
 
 Transparent libx264 → h264_amf converter for AMD GPU acceleration
 
-[![Version](https://img.shields.io/badge/version-46.2-blue.svg)](#-changelog) [![Status](https://img.shields.io/badge/status-stable-success.svg)](#-changelog)  
+[![Version](https://img.shields.io/badge/version-0.2-blue.svg)](#-changelog) [![Status](https://img.shields.io/badge/status-stable-success.svg)](#-changelog)  
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![FFmpeg](https://img.shields.io/badge/FFmpeg-GPL%20v3-red.svg)](https://ffmpeg.org)  
 [![Build](https://img.shields.io/badge/build-Linux%20%2F%20WSL2-orange.svg)](https://ubuntu.com) [![Target](https://img.shields.io/badge/target-Windows%2010%2F11%20x64-blue.svg)](https://www.microsoft.com)  
 [![Donate](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-donate-FFDD00?logo=buy-me-a-coffee&logoColor=black&labelColor=white)](https://buymeacoffee.com/amazoniaaudiovisual)
@@ -133,27 +133,23 @@ Quality tuning:
 
 ## 📝 Changelog
 
-### v0.1a (48.0) — Stable
-- No more internal FFmpeg compilation - Users must now provide their own FFmpeg 8.0 build with h264_amf support. The build script has been removed.
-- Minimalist proxy approach - Only handles codec conversion (libx264 → h264_amf) and preset mapping. All other user parameters pass through unchanged.
-- Smart preset mapping - Translates x264 presets to AMF equivalents (e.g., veryfast → -usage lowlatency -quality speed).
-- Fixed FFmpeg path - Proxy always calls FFmpeg from C:\Program Files (x86)\vMix\streaming\ffmpeg.exe for consistent vMix integration.
-- Per-execution logging - Each run creates a timestamped log file showing original command, final command, and execution status for better debugging.
+### v0.1b — AMF minimal proxy
+ - Drop-in proxy that replaces libx264 with h264_amf while preserving all vMix encoding parameters (bitrate, GOP, profile, level, audio).
+ - Maps x264 presets (ultrafast → veryslow) to AMF -usage / -quality pairs instead of injecting low-level rate-control flags.
+ - Forces DirectShow -rtbufsize 1024M for the vMix Video YV12 input to reduce “real-time buffer too full ... frame dropped” messages under high load.
+ - Launches the real ffmpeg.exe via the Win32 process API and transparently forwards its exit code back to vMix.
+ - Writes per-run proxy logs with both the original vMix command and the rewritten final command to simplify troubleshooting and regression testing.
+​
+### v0.1a — First Release
+- Transparent proxy for libx264 → h264_amf (vMix-friendly).
+- FFmpeg static build with AMF and FDK-AAC integration.
+- Definitive fix for “libfdk_aac not found” via explicit include/lib paths.
+- Robust preset mapping and safe removal of incompatible flags.
+- Detailed build and runtime logs for easy debugging.
 
-Previous (internal) milestones:
-- v46.26: Detailed build and runtime logs for easy debugging
+### Previous (internal) milestones:
 - v46.1: Added FDK-AAC artifact/header verification and clearer errors.
 - v46.0: Initial working proxy + AMF pipeline validation.
-
----
-
-## 🧭 Future implementations
-
-- Next: AV1 proxy (av1_amf) targeting RDNA3-class GPUs, optimized for AMD RX 7000+ series; the proxy will transparently map common x264/VP9/SVT-AV1 options to av1_amf for low-latency streaming profiles where possible.  
-- Add preset mappings for AV1 (speed/balanced/quality) with sensible defaults per use case (live → speed/lowlatency, VOD → quality/transcoding).  
-- Validate compatibility and performance across multiple AMF driver versions and RX 7000+ SKUs, and publish tuning guides (bitrate ladders, GOP, lookahead, VBV).  
-- Expand proxy rules to handle mixed workloads (e.g., auto-fallback to H.264 AMF if AV1 AMF is unavailable or unstable on a given driver/hardware combo).  
-- Improve diagnostics: richer ffmpeg_proxy.log with before/after argument snapshots, driver caps dump, and AMF encoder warnings surfaced to users.
 
 ---
 
